@@ -1,32 +1,65 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+  <div class="app" id="app">
+    <NavBarComponent />
+
     <router-view/>
+
+    <FooterComponent />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import NavBarComponent from "@/components/NavBarComponent";
+import FooterComponent from "@/components/FooterComponent";
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    FooterComponent,
+    NavBarComponent
   }
 }
+</script>
+
+<style lang="scss">
+html{
+  font-size: 10px;
+
+  @media screen and (min-width: 450px){
+    font-size: 16px;
+  }
+}
+
+.app{
+  font-size: 10px;
+
+  font-family: 'Roboto', sans-serif;
+
+  a {
+    text-decoration: none;
+  }
+
+  img{
+    max-width: 100%;
+  }
+
+  .written-font{
+    font-family: 'element';
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.6rem;
+  }
+
+  .c-FooterComponent{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+}
+
+
 </style>
