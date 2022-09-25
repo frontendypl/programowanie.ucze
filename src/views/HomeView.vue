@@ -96,6 +96,10 @@ export default {
   .logos-container{
     margin-top: 2em;
     margin-bottom: 5em;
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 7em;
+    }
   }
 
   .logos{
@@ -168,7 +172,7 @@ export default {
         color: #fff;
         background-color: darkred;
         padding: 0.5em;
-        font-size: 2em;
+        font-size: 2.5em;
         border-radius: 10px;
         max-width: 60%;
         text-align: center;
