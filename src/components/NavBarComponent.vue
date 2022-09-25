@@ -28,6 +28,7 @@ export default {
 
   background-color: black;
   color: #fff;
+  padding: 1.6em 0;
 
   .container {
     display: flex;

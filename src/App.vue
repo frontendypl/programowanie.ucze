@@ -49,14 +49,18 @@ html{
   .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 1.6rem;
+    padding: 0 1.6rem;
+
+    &--flex{
+      display: flex;
+    }
   }
 
   .c-FooterComponent{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    //position: absolute;
+    //bottom: 0;
+    //left: 0;
+    //width: 100%;
   }
 
 }

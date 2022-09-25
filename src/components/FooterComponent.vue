@@ -2,9 +2,15 @@
   <div class="c-FooterComponent">
     <div class="container">
       <div class="brand">
-        <router-link class="brand__link written-font" :to="{name: 'HomeView'}" >
-          {{year}} - ucze.net
-        </router-link>
+<!--        <a class="brand__link" href="https://www.ucze.net" >-->
+<!--          ucze.net-->
+<!--        </a>-->
+        <a class="brand__link" href="https://www.panel.ucze.net/#/rejestracja" target="_blank" >
+          Twórz
+        </a>
+        <a class="brand__link" href="https://www.pytania.ucze.net" target="_blank" >
+          Rozwiązuj
+        </a>
       </div>
     </div>
   </div>
@@ -35,6 +41,7 @@ export default {
 
   background-color: black;
   color: #fff;
+  padding: 1em;
 
   .brand{
     font-size: 2em;
