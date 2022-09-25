@@ -22,7 +22,15 @@ export default {
 
 <style lang="scss">
 html{
-  font-size: 10px;
+  font-size: 7px;
+
+  @media screen and (min-width: 330px){
+    font-size: 8px;
+  }
+
+  @media screen and (min-width: 380px){
+    font-size: 10px;
+  }
 
   @media screen and (min-width: 450px){
     font-size: 12px;

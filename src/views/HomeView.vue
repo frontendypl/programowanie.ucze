@@ -20,41 +20,41 @@
           Zobacz gotowe przykłady ...
         </div>
         <div class="examples__buttons">
-          <router-link class="examples__buttons__button examples__buttons__button--1"
-                       to="/"
+          <a class="examples__buttons__button examples__buttons__button--1"
+                       href="https://pytania.ucze.net/#/LF006" target="_blank"
           >
             Figury Geometryczne
-          </router-link>
+          </a>
 
-          <router-link class="examples__buttons__button examples__buttons__button--2"
-                       to="/"
+          <a class="examples__buttons__button examples__buttons__button--2"
+                       href="https://pytania.ucze.net/#/Lj042" target="_blank"
           >
             j. Polski dla uczniów z Ukrainy
-          </router-link>
+          </a>
 
-          <router-link class="examples__buttons__button examples__buttons__button--3"
-                       to="/"
+          <a class="examples__buttons__button examples__buttons__button--3"
+                       href="https://pytania.ucze.net/#/LJ094" target="_blank"
           >
             Jesień
-          </router-link>
+          </a>
 
-          <router-link class="examples__buttons__button examples__buttons__button--4"
-                       to="/"
+          <a class="examples__buttons__button examples__buttons__button--4"
+                       href="https://pytania.ucze.net/#/LD980" target="_blank"
           >
             Dodawanie do 10
-          </router-link>
+          </a>
 
-          <router-link class="examples__buttons__button examples__buttons__button--5"
-                       to="/"
+          <a class="examples__buttons__button examples__buttons__button--5"
+                       href="https://pytania.ucze.net/#/LD403" target="_blank"
           >
             Dni tygodnia
-          </router-link>
+          </a>
 
-          <router-link class="examples__buttons__button examples__buttons__button--6"
-                       to="/"
+          <a class="examples__buttons__button examples__buttons__button--6"
+                       href="https://pytania.ucze.net/#/LC734" target="_blank"
           >
             czytanie ze zrozumieniem
-          </router-link>
+          </a>
 
         </div>
       </div>
