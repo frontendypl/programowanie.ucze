@@ -1,15 +1,15 @@
 <template>
   <div class="c-FooterComponent">
     <div class="container">
-      <div class="brand">
-<!--        <a class="brand__link" href="https://www.ucze.net" >-->
-<!--          ucze.net-->
-<!--        </a>-->
-        <a class="brand__link" href="https://www.panel.ucze.net/#/rejestracja" target="_blank" >
+      <div class="links">
+        <a class="links__link" href="https://www.panel.ucze.net/#/rejestracja" target="_blank" >
           Twórz
         </a>
-        <a class="brand__link" href="https://www.pytania.ucze.net" target="_blank" >
+        <a class="links__link" href="https://www.pytania.ucze.net" target="_blank" >
           Rozwiązuj
+        </a>
+        <a class="links__link written-font" href="https://www.ucze.net">
+          ucze.net
         </a>
       </div>
     </div>
@@ -41,18 +41,37 @@ export default {
 
   background-color: black;
   color: #fff;
-  padding: 1em;
+  padding: 2em 0;
 
-  .brand{
-    font-size: 2em;
-    &__link{
-      color: inherit;
-    }
+  .container {
+
   }
 
-  .container{
+  .links{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+
+    &__link {
+      color: #fff;
+      font-size: 2em;
+
+      &:first-of-type {
+        font-size: 3em;
+        margin-bottom: 15px;
+      }
+
+      &:nth-of-type(2){
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+        font-weight: 600;
+      }
+    }
   }
 
 }

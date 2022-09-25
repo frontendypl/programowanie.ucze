@@ -25,12 +25,16 @@ html{
   font-size: 10px;
 
   @media screen and (min-width: 450px){
-    font-size: 16px;
+    font-size: 12px;
   }
+
+  @media screen and (min-width: 1367px){
+    font-size: 14px;
+  }
+
 }
 
 .app{
-  font-size: 10px;
 
   font-family: 'Roboto', sans-serif;
 

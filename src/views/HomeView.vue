@@ -102,11 +102,21 @@ export default {
     position: relative;
     width: 40%;
 
+    @media screen and (min-width: 450px){
+      width: 30%;
+    }
+
     &__img{
       width: 7em;
       position: absolute;
       top: -2.5em;
       right: -6em;
+
+      @media screen and (min-width: 450px){
+        width: 9em;
+        top: -4.5em;
+        right: -6em;
+      }
 
       &--panel{
         //transform: translate(10%);
