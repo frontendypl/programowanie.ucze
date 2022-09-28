@@ -11,6 +11,11 @@
         <a class="links__link written-font" href="https://www.ucze.net">
           ucze.net
         </a>
+        <a class="links__link links__link--freepik "
+            href="https://www.freepik.com/free-vector/watercolor-back-school-background-with-white-space_9001487.htm#query=watercolor-back-school-background&position=0&from_view=search&track=sph"
+        >
+          Image by pikisuperstar
+        </a> on Freepik
       </div>
     </div>
   </div>
@@ -70,6 +75,11 @@ export default {
       &:last-child {
         margin-bottom: 0;
         font-weight: 600;
+      }
+
+      &--freepik {
+        font-size: 1em;
+        margin-top: 2em;
       }
     }
   }
