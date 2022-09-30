@@ -29,7 +29,7 @@
           <a class="examples__buttons__button examples__buttons__button--2"
                        href="https://pytania.ucze.net/#/Lj042" target="_blank"
           >
-            j. Polski dla uczniów z Ukrainy
+            Samogłoski
           </a>
 
           <a class="examples__buttons__button examples__buttons__button--3"
