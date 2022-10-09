@@ -4,6 +4,8 @@
 
     <router-view/>
 
+    <ChatComponent apiUrl="http://localhost:2001" />
+
     <FooterComponent />
   </div>
 </template>
@@ -11,9 +13,11 @@
 <script>
 import NavBarComponent from "@/components/NavBarComponent";
 import FooterComponent from "@/components/FooterComponent";
+import ChatComponent from "@/components/ChatComponent";
 
 export default {
   components: {
+    ChatComponent,
     FooterComponent,
     NavBarComponent
   }
@@ -66,6 +70,11 @@ html{
     &--flex{
       display: flex;
     }
+  }
+
+  .c-ChatComponent {
+    margin-bottom: 2em;
+    text-align: center;
   }
 
   .c-FooterComponent{
