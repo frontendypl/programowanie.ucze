@@ -4,13 +4,15 @@
 
     <router-view/>
 
-    <ChatComponent apiUrl="http://localhost:2001" />
+    <ChatComponent :apiUrl="apiUrl" />
 
     <FooterComponent />
   </div>
 </template>
 
 <script>
+import {mapActions, mapGetters, mapState} from 'vuex'
+
 import NavBarComponent from "@/components/NavBarComponent";
 import FooterComponent from "@/components/FooterComponent";
 import ChatComponent from "@/components/ChatComponent";
@@ -20,6 +22,9 @@ export default {
     ChatComponent,
     FooterComponent,
     NavBarComponent
+  },
+  computed: {
+    ...mapGetters(['apiUrl'])
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="c-ChatComponent">
-    <div class="call-icon" @click="show= true">
+    <div class="call-icon" @click="initChat">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
         <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
         <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
@@ -23,68 +23,18 @@
           Dzień dobry, w czym możemy pomóc? Zostaw wiadomość!
         </div>
 
-        <div class="chat__messages__message chat__messages__message--user ">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-        </div>
-
-        <div class="chat__messages__message">
-          Lorem ipsum dolor sit amet.
-        </div>
-
-        <div class="chat__messages__message chat__messages__message--user">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-        </div>
-
-        <div class="chat__messages__message">
-          Lorem ipsum.
-        </div>
-
-        <div class="chat__messages__message chat__messages__message--user ">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-        </div>
-
-        <div class="chat__messages__message">
-          Lorem ipsum dolor sit amet.
-        </div>
-
-        <div class="chat__messages__message chat__messages__message--user">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-        </div>
-
-        <div class="chat__messages__message">
-          Lorem ipsum.
-        </div>
-
-        <div class="chat__messages__message chat__messages__message--user ">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-        </div>
-
-        <div class="chat__messages__message">
-          Lorem ipsum dolor sit amet.
-        </div>
-
-        <div class="chat__messages__message chat__messages__message--user">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, itaque.
-        </div>
-
-        <div class="chat__messages__message">
-          Lorem ipsum.
+        <div v-for="message in messages" :key="message._id"
+            class="chat__messages__message"
+             :class="{'chat__messages__message--user': message.type==='message'}"
+        >
+          {{message.content}}
         </div>
 
       </div>
 
       <div class="contact-form">
-        <textarea class="contact-form__input" />
-        <button class="contact-form__button" type="button">
+        <textarea class="contact-form__input" v-model="newMessage" />
+        <button class="contact-form__button" type="button" @click="handleForm">
           wyślij
         </button>
       </div>
@@ -94,6 +44,13 @@
 </template>
 
 <script>
+import axios from 'axios'
+
+// TODO - dodać licznik nieodczytanych odpowiedzi.
+// TODO - ostylować pasek przewijania
+// TODO - deploy contact-api
+// TODO - file upload (image, pdf, word)
+
 export default {
   name: 'ChatComponent',
   props: {
@@ -104,8 +61,60 @@ export default {
   },
   data(){
     return {
-      show: false
+      show: false,
+      topic: '',
+      messages: [],
+      newMessage: ''
     }
+  },
+  methods: {
+    async initChat(){
+
+      if(!this.topic){
+        try {
+          const response = await axios.post(`${this.apiUrl}/topics`,{
+            source: 'ucze.net'
+          })
+          this.topic = response.data._id
+          window.localStorage.setItem('topic', this.topic)
+        }catch (e) {
+          console.log(e)
+        }
+      }
+      this.show = true
+    },
+    async getMessages(){
+      try {
+        const response = await axios.get(`${this.apiUrl}/topics/${this.topic}/chat`)
+        this.messages = response.data
+      }catch (e) {
+        console.log(e)
+      }
+    },
+    async handleForm(){
+      try{
+        const response = await axios.post(`${this.apiUrl}/messages`,{
+          topic: this.topic,
+          content: this.newMessage
+        })
+        this.newMessage = ''
+        await this.getMessages()
+      }catch (e) {
+        console.log(e)
+      }
+    }
+  },
+  watch: {
+    topic: {
+      handler(newValue, oldValue){
+        const interval = setInterval(()=>{
+          this.getMessages()
+        },1000)
+      }
+    },
+  },
+  created(){
+    this.topic = window.localStorage.getItem('topic')
   }
 }
 </script>
@@ -120,6 +129,7 @@ export default {
       border-radius: 50%;
       text-align: center;
       cursor: pointer;
+      transition: all 0.25s;
 
       svg{
         height: 4em;
@@ -129,6 +139,12 @@ export default {
       &__text {
         font-weight: 600;
         font-size: 2em;
+      }
+
+      &:hover {
+        border-color: black;
+        color: #fff;
+        background-color: black;
       }
     }
 
@@ -147,6 +163,7 @@ export default {
       position: fixed;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       width: 90%;
       height: 90%;
       max-width: 1000px;
@@ -165,16 +182,43 @@ export default {
         svg {
           height: 4em;
           width: auto;
+          transition: all 0.25s;
+
+          &:hover {
+            color: orangered;
+          }
         }
       }
 
       &__messages {
         margin-top: 1em;
+        margin-bottom: auto;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         text-align: left;
         overflow-y: scroll;
+        padding-right: 0.5em;
+        height: 100%;
+
+        &::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: #888;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
 
         &__message{
           padding: 1em;
@@ -182,6 +226,7 @@ export default {
           background-color: #100909;
           color: #fff;
           border-radius: 1em;
+          margin-bottom: 0.5em;
 
           &--welcome {
             //background-color: #76868C;
@@ -191,6 +236,7 @@ export default {
             align-self: flex-end;
             text-align: right;
             background-color: #fff;
+            border: 1px solid black;
             color: black;
           }
         }
