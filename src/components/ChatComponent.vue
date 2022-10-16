@@ -17,7 +17,7 @@
           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
         </svg>
       </div>
-      <div class="chat__messages">
+      <div class="chat__messages" ref="chat">
 
         <div class="chat__messages__message chat__messages__message--welcome">
           Dzień dobry, w czym możemy pomóc? Zostaw wiadomość!
@@ -33,7 +33,7 @@
       </div>
 
       <div class="contact-form">
-        <textarea class="contact-form__input" v-model="newMessage" />
+        <textarea class="contact-form__input" v-model="newMessage" @keydown.enter="handleForm" />
         <button class="contact-form__button" type="button" @click="handleForm">
           wyślij
         </button>
@@ -112,6 +112,16 @@ export default {
         },1000)
       }
     },
+    messages: {
+      handler(newValue, oldValue){
+        if(this.show && (newValue.length > oldValue.length)){
+          setTimeout(()=>{
+            this.$refs.chat.scrollTop = this.$refs.chat.scrollHeight
+          },10)
+        }
+      },
+      deep: true
+    }
   },
   created(){
     this.topic = window.localStorage.getItem('topic')
