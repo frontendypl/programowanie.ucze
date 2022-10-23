@@ -33,7 +33,7 @@
       </div>
 
       <div class="contact-form">
-        <textarea class="contact-form__input" v-model="newMessage" @keydown.enter="handleForm" />
+        <textarea class="contact-form__input" v-model="newMessage" @keydown.enter="handleForm" ref="textarea"/>
         <button class="contact-form__button" type="button" @click="handleForm">
           wyślij
         </button>
@@ -69,7 +69,6 @@ export default {
   },
   methods: {
     async initChat(){
-
       if(!this.topic){
         try {
           const response = await axios.post(`${this.apiUrl}/topics`,{
@@ -105,6 +104,15 @@ export default {
     }
   },
   watch: {
+    show: {
+      handler(newValue, oldValue){
+        if(newValue === true){
+          setTimeout(()=>{
+            this.$refs.textarea.focus()
+          },10)
+        }
+      }
+    },
     topic: {
       handler(newValue, oldValue){
         const interval = setInterval(()=>{
@@ -125,7 +133,7 @@ export default {
   },
   created(){
     this.topic = window.localStorage.getItem('topic')
-  }
+  },
 }
 </script>
 
