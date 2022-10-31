@@ -8,7 +8,7 @@ export default new Vuex.Store({
   },
   getters: {
     apiUrl(){
-      return location.href.indexOf('localhost') === -1? 'https://contact-api.ucze.net' : 'http://localhost:2001'
+      return location.href.indexOf('localhost') === -1? 'https://contact-api.ittt.pl' : 'http://localhost:2001'
     },
   },
   mutations: {
