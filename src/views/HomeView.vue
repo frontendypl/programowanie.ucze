@@ -1,74 +1,45 @@
 <template>
   <div class="v-HomeView">
-    <div class="logos-container container container--flex">
-      <div class="logos">
-        <img class="logos__img logos__img--panel" src="../assets/Logo_pytania.png">
-        <img class="logos__img logos__img--pytania" src="../assets/Logo_panel.png">
-      </div>
-      <div class="heading">
-        <h1 class="heading__text">
-          Twórz
-        </h1>
-        <h2 class="heading__sub-text">
-          Materiały edukacyjne, kartkówki, powtórki.
-        </h2>
-      </div>
-    </div>
-    <div class="examples-container container">
-      <div class="examples">
-        <div class="examples__heading">
-          Zobacz gotowe przykłady ...
-        </div>
-        <div class="examples__buttons">
-          <a class="examples__buttons__button examples__buttons__button--1"
-                       href="https://pytania.ucze.net/#/LF006" target="_blank"
-          >
-            Figury Geometryczne
-          </a>
 
-          <a class="examples__buttons__button examples__buttons__button--2"
-                       href="https://pytania.ucze.net/#/Lj042" target="_blank"
-          >
-            Samogłoski
-          </a>
-
-          <a class="examples__buttons__button examples__buttons__button--3"
-                       href="https://pytania.ucze.net/#/LJ094" target="_blank"
-          >
-            Jesień
-          </a>
-
-          <a class="examples__buttons__button examples__buttons__button--4"
-                       href="https://pytania.ucze.net/#/LD980" target="_blank"
-          >
-            Dodawanie do 10
-          </a>
-
-          <a class="examples__buttons__button examples__buttons__button--5"
-                       href="https://pytania.ucze.net/#/LD403" target="_blank"
-          >
-            Dni tygodnia
-          </a>
-
-          <a class="examples__buttons__button examples__buttons__button--6"
-                       href="https://pytania.ucze.net/#/LC734" target="_blank"
-          >
-            czytanie ze zrozumieniem
-          </a>
-
-        </div>
-      </div>
-    </div>
     <div class="container">
-      <div class="start">
-        <div class="start__text">
-          i stwórz własne.
-        </div>
-        <a class="start__link" href="https://www.panel.ucze.net/#/rejestracja" target="_blank">
-          Zacznij Teraz !
-        </a>
+      <div class="heading">
+        <h1 class="heading__text"> W czym mogę pomóc ?</h1>
       </div>
+
+      <div class="blocks">
+
+        <div class="blocks__item">
+          <div class="blocks__item__text">
+            Nauka
+              <div class="blocks__item__text__separator"></div>
+            Programowania *
+          </div>
+        </div>
+
+        <div class="blocks__item">
+          <div class="blocks__item__text">
+            Stworzenie
+              <div class="blocks__item__text__separator"></div>
+            Aplikacji
+          </div>
+        </div>
+
+        <div class="blocks__item">
+          <div class="blocks__item__text">
+            Pomoc z istniejącą aplikacją, stroną itp.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="info">
+        <p class="info__text">
+          * Online lub Katowice/Tychy
+        </p>
+      </div>
+
     </div>
+
   </div>
 </template>
 
@@ -86,147 +57,88 @@ export default {
 
 <style lang="scss" scoped>
 .v-HomeView{
-  margin: 7em 0;
+  font-size: 4px;
+
+  @media screen and (min-width: 1365px){
+    font-size: 9px;
+  }
+
+  @media screen and (min-width: 1600px){
+    font-size: 10px;
+  }
+
+  padding: 5em 0;
 
   .container{
-    //display: flex;
-    gap: 2rem;
+
   }
 
-  .logos-container{
-    margin-top: 2em;
+  .heading {
     margin-bottom: 5em;
-
-    @media screen and (min-width: 1200px) {
-      margin-bottom: 7em;
-    }
-  }
-
-  .logos{
-    position: relative;
-    width: 40%;
-
-    @media screen and (min-width: 450px){
-      width: 30%;
-    }
-
-    &__img{
-      width: 7em;
-      position: absolute;
-      top: -2.5em;
-      right: -6em;
-
-      @media screen and (min-width: 450px){
-        width: 9em;
-        top: -4.5em;
-        right: -6em;
-      }
-
-      &--panel{
-        //transform: translate(10%);
-      }
-      &--pytania{
-        transform: translate(-75%, 75%);
-      }
-    }
-  }
-
-  .heading{
-    text-align: center;
-    font-weight: 600;
-    //padding-left: 3em;
 
     &__text {
-      font-size: 4em;
-      margin-bottom: 0.3em;
-    }
-    &__sub-text{
-      font-size: 2em;
-      line-height: 120%;
-    }
-  }
-
-  .examples-container {
-    margin-bottom: 5em;
-  }
-
-  .examples {
-    width: 100%;
-
-    &__heading{
       text-align: center;
+      font-size: 7.5em;
       font-weight: 600;
-      font-size: 2.4em;
-      margin-bottom: 1em;
-    }
-
-    &__buttons {
-      display: flex;
-      gap: 1em;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-
-      &__button {
-        display: inline-block;
-        color: #fff;
-        background-color: darkred;
-        padding: 0.5em;
-        font-size: 2.5em;
-        border-radius: 10px;
-        max-width: 60%;
-        text-align: center;
-
-
-        &--1 {
-          background-color: #EA4242;
-        }
-        &--2 {
-          background-color: #42A1EA;
-        }
-        &--3 {
-          background-color: #632B2B;
-        }
-        &--4 {
-          background-color: #1D8F37;
-        }
-        &--5 {
-          background-color: #A8BD1E;
-        }
-        &--6 {
-          background-color: #C342EA;
-        }
-      }
     }
   }
 
-  .start {
-    text-align: center;
-    font-weight: 600;
-    margin-top: 1em;
+  .blocks {
+    display: flex;
 
-    &__text {
-      font-size: 2em;
-      margin-bottom: 0.5em;
+
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3em;
+
+    @media screen and (min-width: 1000px) {
+      flex-direction: row;
     }
 
-    &__link {
-      font-size: 3em;
-      color: black;
-      padding: 0.5em;
-      border: 2px solid black;
-      border-radius: 10px;
-      transition: all 0.25s;
+    &__item {
+      display: flex;
+      align-items: center;
       width: 100%;
-      display: block;
+      margin: 0 auto;
 
+      padding: 7.5em 4em;
+      border: 2px solid rgba(0,0,0,0);
+      border-radius: 2em;
+      box-shadow: 1px 1px 10px rgba(0,0,0,0.6);
+      transition: all 0.2s;
+
+      cursor: pointer;
 
       &:hover{
-        background-color: orangered;
-        border-color: orangered;;
+        background-color: #ABC7CC;
+        border: 2px solid #ABC7CC;
         color: #fff;
+        //box-shadow: 1px 1px 10px rgba(0,0,0,0.6);
+        box-shadow: none;
+      }
+
+      &__text {
+        text-align: center;
+        width: 100%;
+        font-size: 3em;
+        font-weight: 600;
+        line-height: 150%;
+
+        &__separator {
+
+        }
       }
     }
   }
+
+  .info {
+    margin-top: 3em;
+
+    &__text{
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+  }
+
 }
 </style>

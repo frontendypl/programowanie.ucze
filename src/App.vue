@@ -31,22 +31,23 @@ export default {
 
 <style lang="scss">
 html{
-  font-size: 7px;
+  font-size: 8px;
 
-  @media screen and (min-width: 330px){
-    font-size: 8px;
-  }
-
-  @media screen and (min-width: 380px){
-    font-size: 10px;
-  }
-
-  @media screen and (min-width: 450px){
-    font-size: 12px;
-  }
+  //@media screen and (min-width: 330px){
+  //  font-size: 8px;
+  //}
+  //
+  //@media screen and (min-width: 380px){
+  //  //font-size: 10px;
+  //}
+  //
+  //@media screen and (min-width: 450px){
+  //  //font-size: 12px;
+  //}
+  //
 
   @media screen and (min-width: 1367px){
-    font-size: 14px;
+    font-size: 10px;
   }
 
 }
@@ -54,6 +55,11 @@ html{
 .app{
 
   font-family: 'Roboto', sans-serif;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   a {
     text-decoration: none;
@@ -78,7 +84,7 @@ html{
   }
 
   .c-ChatComponent {
-    margin-bottom: 2em;
+    margin-bottom: 5em;
     text-align: center;
   }
 

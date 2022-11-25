@@ -20,7 +20,7 @@
       <div class="chat__messages" ref="chat">
 
         <div class="chat__messages__message chat__messages__message--welcome">
-          Dzień dobry, w czym możemy pomóc? Zostaw wiadomość!
+          Dzień dobry, w czym mogę pomóc? Zostaw wiadomość!
         </div>
 
         <div v-for="message in messages" :key="message._id"
@@ -72,7 +72,7 @@ export default {
       if(!this.topic){
         try {
           const response = await axios.post(`${this.apiUrl}/topics`,{
-            source: 'ucze.net'
+            source: 'Nauka Programowania'
           })
           this.topic = response.data._id
           window.localStorage.setItem('topic', this.topic)

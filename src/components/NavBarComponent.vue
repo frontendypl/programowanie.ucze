@@ -2,12 +2,10 @@
   <div class="c-NavBarComponent">
     <div class="container">
       <div class="brand">
-        <router-link class="brand__link written-font" :to="{name: 'HomeView'}" >
-          ucze.net
+        <router-link class="brand__link" :to="{name: 'HomeView'}" >
+          <div class="brand__link__top">Programowanie</div>
+          <div class="brand__link__bottom">ucze.net</div>
         </router-link>
-      </div>
-      <div class="heading written-font">
-        Aplikacje dla nauczycieli i uczniów.
       </div>
     </div>
   </div>
@@ -22,9 +20,11 @@ export default {
 <style lang="scss" scoped>
 .c-NavBarComponent{
 
-  @media screen and (min-width: 1000px){
-    font-size: 16px;
-  }
+  font-size: 10px;
+
+  //@media screen and (min-width: 1000px){
+  //  font-size: 16px;
+  //}
 
   background-color: black;
   color: #fff;
@@ -38,9 +38,18 @@ export default {
 
   .brand{
     font-size: 2em;
-    font-weight: 600;
+    color: #fff;
     &__link{
       color: inherit;
+
+      &__top{
+        font-family: nasalization;
+      }
+      &__bottom{
+        font-family: rational-integer;
+        text-align: right;
+        letter-spacing: 2px;
+      }
     }
   }
 
