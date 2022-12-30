@@ -8,13 +8,13 @@
 
       <div class="blocks">
 
-        <div class="blocks__item">
+        <router-link :to="{name: 'TechnologiesView'}" class="blocks__item">
           <div class="blocks__item__text">
             Nauka
               <div class="blocks__item__text__separator"></div>
             Programowania *
           </div>
-        </div>
+        </router-link>
 
         <div class="blocks__item">
           <div class="blocks__item__text">

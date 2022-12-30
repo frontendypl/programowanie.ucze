@@ -30,6 +30,10 @@ export default {
 </script>
 
 <style lang="scss">
+$mobile: 330px;
+$hd: 1366px;
+$fhd: 1600px;
+
 html{
   font-size: 8px;
 
@@ -63,6 +67,7 @@ html{
 
   a {
     text-decoration: none;
+    color: inherit;
   }
 
   img{
@@ -75,6 +80,11 @@ html{
 
   .container {
     max-width: 1000px;
+
+    @media screen and (min-width: $hd) {
+      max-width: $hd;
+    }
+
     margin: 0 auto;
     padding: 0 1.6rem;
 
