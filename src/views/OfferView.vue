@@ -227,18 +227,24 @@ export default {
 
     &__slide{
       //background-color: red;
-      padding: 1.2em;
+      padding: 1.5em;
       img{
         transition: transform 0.4s;
       }
 
       &.slick-center{
-
+        position: relative;
 
         img{
           transform: scale(1.1);
           box-shadow: 0 0 2px rgb(0 0 0);
           transition: all 0.25s;
+
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top: 50%;
+          z-index: 2;
 
           @media screen and (min-width: 500px) {
             transform: scale(2);

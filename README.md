@@ -1,4 +1,4 @@
-# ucze
+# programowanie.ucze.net
 
 ## Project setup
 ```

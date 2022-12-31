@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import TechnologiesView from '../views/TechnologiesView.vue'
 import ScopesView from '../views/ScopesView.vue'
 import OfferView from '../views/OfferView.vue'
+import GoodPracticesView from '../views/GoodPracticesView.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/nauka-programowania/oferta',
     name: 'OfferView',
     component: OfferView
+  },
+  {
+    path: '/nauka-programowania/dobre-praktyki',
+    name: 'GoodPracticesView',
+    component: GoodPracticesView
   },
 ]
 

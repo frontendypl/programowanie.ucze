@@ -1,9 +1,13 @@
 <template>
-  <div class="c-FooterComponent">
+  <footer class="c-FooterComponent">
     <div class="container">
 
+      <a class="footer-text" href="https://ucze.net">
+        ucze.net
+      </a>
+
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -34,6 +38,14 @@ export default {
   padding: 2em 0;
 
   .container {
+
+    .footer-text {
+      display: block;
+      font-family: rational-integer;
+      color: #fff;
+      text-align: center;
+      font-size: 2em;
+    }
 
   }
 

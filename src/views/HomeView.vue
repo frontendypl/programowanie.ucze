@@ -74,7 +74,7 @@ export default {
   }
 
   .heading {
-    margin-bottom: 5em;
+    margin-bottom: 7em;
 
     &__text {
       text-align: center;

@@ -1,14 +1,14 @@
 <template>
-  <div class="v-ScopesView">
+  <div class="v-GoodPractices">
 
     <div class="container">
       <div class="heading">
-        <h1 class="heading__text"> Zakres </h1>
+        <h1 class="heading__text"> Dobre Praktyki </h1>
       </div>
 
       <div class="scopes">
 
-        <router-link :to="{name: 'TechnologiesView'}" class="blocks__item">
+        <router-link :to="{name: 'ScopesView'}" class="blocks__item">
           <div class="scopes__button-back">
             <svg class="scopes__button-back__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 278.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
           </div>
@@ -18,49 +18,61 @@
 
           <div class="scopes__container__item">
             <div class="scopes__container__item__name">
-              Strony Internetowe
+              Mobile First
             </div>
           </div>
 
-          <div class="scopes__container__item" title="Single Page Aplication">
+          <div class="scopes__container__item">
             <div class="scopes__container__item__name">
-              SPA
+              GIT
             </div>
           </div>
 
-          <div class="scopes__container__item" title="Multi Page Aplication">
+          <div class="scopes__container__item">
             <div class="scopes__container__item__name">
-              MPA
+              BEM
             </div>
           </div>
 
-          <div class="scopes__container__item" title="Multi Page Aplication">
+          <div class="scopes__container__item">
             <div class="scopes__container__item__name">
-              Cięcie PSD
+              Pixel Perfect
             </div>
           </div>
 
-          <div class="scopes__container__item" title="Multi Page Aplication">
+          <div class="scopes__container__item">
             <div class="scopes__container__item__name">
-              Testowanie
+              QA
             </div>
           </div>
 
-          <div class="scopes__container__item" title="Multi Page Aplication">
+          <div class="scopes__container__item" >
             <div class="scopes__container__item__name">
-              Testy Browserstack
+              Flex
             </div>
           </div>
 
-          <div class="scopes__container__item" title="Multi Page Aplication">
+          <div class="scopes__container__item" >
             <div class="scopes__container__item__name">
-              Projektowanie w Adobe XD
+              DRY
+            </div>
+          </div>
+
+          <div class="scopes__container__item" >
+            <div class="scopes__container__item__name">
+              Microservices
+            </div>
+          </div>
+
+          <div class="scopes__container__item" >
+            <div class="scopes__container__item__name">
+              JWT
             </div>
           </div>
 
         </div>
 
-        <router-link class="scopes__button-next" :to="{name: 'GoodPracticesView'}">
+        <router-link class="scopes__button-next" :to="{name: 'OfferView'}">
           <svg class="scopes__button-next__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
         </router-link>
 
@@ -77,7 +89,7 @@
 import BootstrapLogo from '@/assets/logos/Bootstrap_logo.svg.png'
 
 export default {
-  name: 'ScopesView',
+  name: 'GoodPracticesView',
   components: {
     // HelloWorld
   }
@@ -89,7 +101,7 @@ $mobile: 330px;
 $hd: 1366px;
 $fhd: 1600px;
 
-.v-ScopesView{
+.v-GoodPractices{
 
   font-size: 4px;
 
